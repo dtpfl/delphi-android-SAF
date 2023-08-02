@@ -1,4 +1,4 @@
-unit Unit1;
+ï»¿unit Unit1;
 
 interface
 
@@ -19,70 +19,70 @@ uses
 
 type
   TForm1 = class(TForm)
-    ButtonYeniBirDosyaOluþturun: TButton;
-    ButtonBirDosyaAcin: TButton;
-    ButtonBirDizininErisimineIzinVerin: TButton;
-    ButtonBelgeSilin: TButton;
+    ButtonCreateANewFile: TButton;
+    btnOpenFile: TButton;
+    btnAccessToDir: TButton;
+    BtnDeleteDoc: TButton;
     TabControl1: TTabControl;
     tiUriAl: TTabItem;
     tiSAF1: TTabItem;
-    ButtonSanalDosyadanGirisAkisi: TButton;
-    ButtonSanalBirDosyaAcin: TButton;
-    ButtonBelgeDuzenleyin: TButton;
-    ButtonBelgeAcinGirisAkisi: TButton;
+    BtnInputStreamFromVirtFile: TButton;
+    BtnOpenVirtFile: TButton;
+    BtnEditDoc: TButton;
+    btnOpenDocInputStream: TButton;
     tiIlave1: TTabItem;
-    ButtonMetinDosyasiOku: TButton;
-    ButtonPdfGoster: TButton;
-    xButtonPdfSec: TButton;
-    ButtonKaliciIzinler: TButton;
+    BtnReadTextFile: TButton;
+    BtnShowPDF: TButton;
+    btnSelectPDF: TButton;
+    BtnPermanentPermission: TButton;
     ImageControl1: TImageControl;
-    ButtonResimGoster: TButton;
+    btnShowImage: TButton;
     tiIlave2: TTabItem;
-    ButtonDosyaKopyalayinDahilidenHariciye: TButton;
-    ButtonDosyaKopyalayinHaricidenDahiliye: TButton;
-    ButtonDosyaPaylasin: TButton;
-    ButtonBelgeMetaVerileriniInceleyin: TButton;
-    ButtonBelgeAcinBitEslem: TButton;
+    btnCopyInternalExternal: TButton;
+    BtnCopyExternalInternal: TButton;
+    BtnShareFile: TButton;
+    BtnReviewDocMeta: TButton;
+    BtnOpenDocBitmap: TButton;
     tiSAF2: TTabItem;
     Panel1: TPanel;
     Memo1: TMemo;
     MemoUri: TMemo;
-    ButtonHerhangiBirDosyaUrisiAl: TButton;
-    ButtonDosyalarCetveli: TButton;
-    procedure ButtonBirDizininErisimineIzinVerinClick(Sender: TObject);
-    procedure ButtonYeniBirDosyaOluþturunClick(Sender: TObject);
-    procedure ButtonBirDosyaAcinClick(Sender: TObject);
-    procedure ButtonBelgeSilinClick(Sender: TObject);
-    procedure ButtonKaliciIzinlerClick(Sender: TObject);
-    procedure ButtonMetinDosyasiOkuClick(Sender: TObject);
-    procedure xButtonPdfSecClick(Sender: TObject);
-    procedure ButtonPdfGosterClick(Sender: TObject);
+    btnGetFileUri: TButton;
+    btnFileRuler: TButton;
+    procedure ButtonAllowAccessToOneDirectoryClick(Sender: TObject);
+    procedure ButtonCreateANewFileClick(Sender: TObject);
+    procedure ButtonOpenAFileClick(Sender: TObject);
+    procedure ButtonDocumentDeleteClick(Sender: TObject);
+    procedure ButtonPermanentPermissionsClick(Sender: TObject);
+    procedure ButtonReadTextFileClick(Sender: TObject);
+    procedure xButtonSelectPdfClick(Sender: TObject);
+    procedure ButtonShowPdfClick(Sender: TObject);
     procedure MemoUriTap(Sender: TObject; const Point: TPointF);
-    procedure ButtonBelgeAcinBiteslemClick(Sender: TObject);
-    procedure ButtonResimGosterClick(Sender: TObject);
-    procedure ButtonBelgeMetaVerileriniInceleyinClick(Sender: TObject);
+    procedure ButtonOpenDocumentBitProcessClick(Sender: TObject);
+    procedure ButtonShowImageClick(Sender: TObject);
+    procedure ButtonInspectDocumentMetaDataClick(Sender: TObject);
     procedure TabControl1Change(Sender: TObject);
-    procedure ButtonBelgeAcinGirisAkisiClick(Sender: TObject);
-    procedure ButtonBelgeDuzenleyinClick(Sender: TObject);
-    procedure ButtonDosyaKopyalayinDahilidenHariciyeClick(Sender: TObject);
-    procedure ButtonDosyaKopyalayinHaricidenDahiliyeClick(Sender: TObject);
-    procedure ButtonDosyaPaylasinClick(Sender: TObject);
-    procedure ButtonSanalBirDosyaAcinClick(Sender: TObject);
-    procedure ButtonHerhangiBirDosyaUrisiAlClick(Sender: TObject);
-    procedure ButtonSanalDosyadanGirisAkisiClick(Sender: TObject);
-    procedure ButtonDosyalarCetveliClick(Sender: TObject);
+    procedure ButtonOpenDocumentInputStreamClick(Sender: TObject);
+    procedure ButtonEditDocumentClick(Sender: TObject);
+    procedure ButtonCopyFileFromInternalToExternalClick(Sender: TObject);
+    procedure ButtonCopyFileFromExternalToInternalClick(Sender: TObject);
+    procedure ButtonShareFileClick(Sender: TObject);
+    procedure ButtonOpenAVirtualFileClick(Sender: TObject);
+    procedure ButtonGetAnyFileUriClick(Sender: TObject);
+    procedure ButtonVirtualFileInputStreamClick(Sender: TObject);
+    procedure ButtonFilesRulerClick(Sender: TObject);
   private
-    procedure IletiFaaliyetiYakala(const Sender: TObject; const M: TMessage);
+    procedure CaptureMessageActivity(const Sender: TObject; const M: TMessage);
     procedure OnActivityResult(RequestCode, ResultCode: Integer; Data: JIntent);
-    procedure PdfGoster(Uri: JNet_Uri);
-    procedure ResimGosterici(Uri: JNet_Uri; Resim: TImageControl);
-    procedure DosyaKopyalaci_DahilidenHariciye(Dosya: string);
-    procedure DosyaKopyalaci_HaricidenDahiliye;
-    procedure Teblig(cTeblig: string);
-    function MetinDosyasiOkuyucu(Uri: JNet_Uri): string;
-    function DosyaSilici(Uri: JNet_Uri): boolean;
-    function DosyaAdi(Uri: JNet_Uri): string;
-    function DosyaUri(Uri: JNet_Uri): JNet_Uri;
+    procedure ShowPdf(Uri: JNet_Uri);
+    procedure ImageShowcase(Uri: JNet_Uri; Resim: TImageControl);
+    procedure FileCopier_FromInternalToExternal(Dosya: string);
+    procedure FileCopier_FromExternalToInternal;
+    procedure Notify1(text: string);
+    function TextFileReader(Uri: JNet_Uri): string;
+    function FileDeleter(Uri: JNet_Uri): boolean;
+    function FileName(Uri: JNet_Uri): string;
+    function FileUri(Uri: JNet_Uri): JNet_Uri;
   const
     Dosya_Olustur: integer = 11; // CREATE_FILE = 1
     Pdf_Dosyasi_Sec: integer = 22; // PICK_PDF_FILE = 2
@@ -110,18 +110,18 @@ implementation
 
 {$R *.fmx}
 
-procedure TForm1.ButtonMetinDosyasiOkuClick(Sender: TObject);
+procedure TForm1.ButtonReadTextFileClick(Sender: TObject);
 begin
-  Memo1.Text := MetinDosyasiOkuyucu(UriCan);
+  Memo1.Text := TextFileReader(UriCan);
 end;
 
-procedure TForm1.ButtonPdfGosterClick(Sender: TObject);
+procedure TForm1.ButtonShowPdfClick(Sender: TObject);
 begin
-  PdfGoster(UriCan);
-  Memo1.Text := 'Pdf göster : ' + JStringToString(UriCan.GetPath);
+  ShowPdf(UriCan);
+  Memo1.Text := 'Show PDF: ' + JStringToString(UriCan.GetPath);
 end;
 
-procedure TForm1.ButtonResimGosterClick(Sender: TObject);
+procedure TForm1.ButtonShowImageClick(Sender: TObject);
 var
   Intent: JIntent;
 begin
@@ -136,10 +136,10 @@ begin
     ImageControl1.Parent := TabControl1.ActiveTab;
   end
   else
-    Teblig('Resim alýnamadý!');
+    Notify1('Image could not be obtained!');
 end;
 
-procedure TForm1.ButtonSanalBirDosyaAcinClick(Sender: TObject);
+procedure TForm1.ButtonOpenAVirtualFileClick(Sender: TObject);
   function SanalDosyami(Uri: JNet_Uri): boolean; (* isVirtualFile *)
   var
     flags: integer;
@@ -167,7 +167,7 @@ begin
   SanalDosyami(UriCan);
 end;
 
-procedure TForm1.ButtonSanalDosyadanGirisAkisiClick(Sender: TObject);
+procedure TForm1.ButtonVirtualFileInputStreamClick(Sender: TObject);
   function SanalDosyaIcinGirisAkisiAl(Uri: JNet_Uri; mimeTypeFilter: String)
     : JInputStream; (* getInputStreamForVirtualFile *)
   var
@@ -179,7 +179,7 @@ procedure TForm1.ButtonSanalDosyadanGirisAkisiClick(Sender: TObject);
       StringToJString(mimeTypeFilter));
     if ((openableMimeTypes = nil) or (openableMimeTypes.Length < 1)) then
     begin
-      Teblig('Dosya bulunamadý!');
+      Notify1('File not found!');
       result := nil;
       exit;
     end;
@@ -191,7 +191,7 @@ begin
   SanalDosyaIcinGirisAkisiAl(UriCan, '*/*');
 end;
 
-procedure TForm1.xButtonPdfSecClick(Sender: TObject);
+procedure TForm1.xButtonSelectPdfClick(Sender: TObject);
 var
   Intent: JIntent;
 begin
@@ -202,7 +202,7 @@ begin
   TAndroidHelper.Activity.startActivityForResult(Intent, Pdf_Dosyasi_Sec);
 end;
 
-procedure TForm1.ButtonBelgeAcinBiteslemClick(Sender: TObject);
+procedure TForm1.ButtonOpenDocumentBitProcessClick(Sender: TObject);
   function UridenBiteslemAl(Uri: JNet_Uri): JBitmap; (* getBitmapFromUri *)
   var
     fileDescriptor: JFileDescriptor;
@@ -234,7 +234,7 @@ begin
   ImageControl1.Parent := TabControl1.ActiveTab;
 end;
 
-procedure TForm1.ButtonBelgeAcinGirisAkisiClick(Sender: TObject);
+procedure TForm1.ButtonOpenDocumentInputStreamClick(Sender: TObject);
 var
   Intent: JIntent;
 begin
@@ -245,7 +245,7 @@ begin
   TAndroidHelper.Activity.startActivityForResult(Intent, Metin_Dosyasi_Sec);
 end;
 
-procedure TForm1.ButtonBelgeDuzenleyinClick(Sender: TObject);
+procedure TForm1.ButtonEditDocumentClick(Sender: TObject);
   procedure MetinBelgesiDegistir(Uri: JNet_Uri); (* alterDocument *)
   var
     pfd: JParcelFileDescriptor;
@@ -256,7 +256,7 @@ procedure TForm1.ButtonBelgeDuzenleyinClick(Sender: TObject);
         StringToJString('w'));
       fileOutputStream := TJFileOutputStream.JavaClass.init
         (pfd.getFileDescriptor);
-      fileOutputStream.write(StringToJString('Üzerine yazýldý ' + timetostr(Now)
+      fileOutputStream.write(StringToJString('Overwritten ' + timetostr(Now)
         ).getBytes);
       fileOutputStream.close;
       pfd.close;
@@ -270,11 +270,11 @@ begin
   MetinBelgesiDegistir(UriCan);
 end;
 
-procedure TForm1.ButtonBelgeMetaVerileriniInceleyinClick(Sender: TObject);
+procedure TForm1.ButtonInspectDocumentMetaDataClick(Sender: TObject);
   procedure GoruntuMetaVerisiDokumu(Uri: JNet_Uri); (* dumpImageMetaData *)
-  // Sorgu, tek bir belgeye uygulandýðý için, sadece tek satýr döndürür.
-  // Alanlarý filtreleme, sýralama veya seçmeye ihtiyaç yoktur.
-  // Çünkü tüm alanlarý bir belge için istiyoruz.
+  // Sorgu, tek bir belgeye uygulandï¿½ï¿½ï¿½ iï¿½in, sadece tek satï¿½r dï¿½ndï¿½rï¿½r.
+  // Alanlarï¿½ filtreleme, sï¿½ralama veya seï¿½meye ihtiyaï¿½ yoktur.
+  // ï¿½ï¿½nkï¿½ tï¿½m alanlarï¿½ bir belge iï¿½in istiyoruz.
   var
     displayName, size: JString;
     sizeIndex: integer;
@@ -288,15 +288,15 @@ procedure TForm1.ButtonBelgeMetaVerileriniInceleyinClick(Sender: TObject);
         begin
           displayName := cursor.getString
             (cursor.getColumnIndex(TJOpenableColumns.JavaClass.DISPLAY_NAME));
-          Memo1.Lines.Add( { TAG.ToString + } 'Görünen Ad: ' +
+          Memo1.Lines.Add( { TAG.ToString + } 'Visible Name: ' +
             JStringToString(displayName));
           sizeIndex := cursor.getColumnIndex(TJOpenableColumns.JavaClass.SIZE);
           size := nil;
           if not(cursor.isNull(sizeIndex)) then
             size := cursor.getString(sizeIndex)
           else
-            size := StringToJString('Bilinmiyor');
-          Memo1.Lines.Add( { TAG.ToString + } 'Boyut: ' +
+            size := StringToJString('Unknown');
+          Memo1.Lines.Add( { TAG.ToString + } 'Size: ' +
             JStringToString(size));
         end;
     finally
@@ -308,7 +308,7 @@ begin
   GoruntuMetaVerisiDokumu(UriCan);
 end;
 
-procedure TForm1.ButtonBelgeSilinClick(Sender: TObject);
+procedure TForm1.ButtonDocumentDeleteClick(Sender: TObject);
 var
   Intent: JIntent;
 begin
@@ -319,17 +319,17 @@ begin
   TAndroidHelper.Activity.startActivityForResult(Intent, Dosya_Sil);
 end;
 
-procedure TForm1.ButtonBirDizininErisimineIzinVerinClick(Sender: TObject);
+procedure TForm1.ButtonAllowAccessToOneDirectoryClick(Sender: TObject);
   procedure DizinAc(YuklenecekUri: JNet_Uri);
-  // Sistem dosya seçici kullanarak bir dizin seçin
+  // Sistem dosya seï¿½ici kullanarak bir dizin seï¿½in
   var
     Intent: JIntent;
   begin
     Intent := TJIntent.Create;
     Intent.setAction(TJIntent.JavaClass.ACTION_OPEN_DOCUMENT_TREE);
 
-    // Ýsteðe baðlý olarak, sistem dosya seçici yüklendiðinde
-    // açýlacak dizin için bir URI belirleyin.
+    // ï¿½steï¿½e baï¿½lï¿½ olarak, sistem dosya seï¿½ici yï¿½klendiï¿½inde
+    // aï¿½ï¿½lacak dizin iï¿½in bir URI belirleyin.
     Intent.putExtra(TJDocumentsContract.JavaClass.EXTRA_INITIAL_URI,
       JParcelable(YuklenecekUri));
 
@@ -340,8 +340,8 @@ begin
   DizinAc(KokDizin);
 end;
 
-procedure TForm1.ButtonBirDosyaAcinClick(Sender: TObject);
-// Bir PDF belgesi seçmek için talep kodu.
+procedure TForm1.ButtonOpenAFileClick(Sender: TObject);
+// Bir PDF belgesi seï¿½mek iï¿½in talep kodu.
 // const Pdf_Dosyasi_Sec : integer = 22;  //PICK_PDF_FILE = 2
 
   procedure DosyaAc(seciciBaslangicUri: JNet_Uri);
@@ -353,8 +353,8 @@ procedure TForm1.ButtonBirDosyaAcinClick(Sender: TObject);
     Intent.addCategory(TJIntent.JavaClass.CATEGORY_OPENABLE);
     Intent.setType(StringToJString('application/pdf'));
 
-    // Ýsteðe baðlý olarak, sistem dosya seçici yüklendiðinde
-    // gösterilecek dosya için bir URI belirleyin.
+    // ï¿½steï¿½e baï¿½lï¿½ olarak, sistem dosya seï¿½ici yï¿½klendiï¿½inde
+    // gï¿½sterilecek dosya iï¿½in bir URI belirleyin.
     Intent.putExtra(TJDocumentsContract.JavaClass.EXTRA_INITIAL_URI,
       JParcelable(seciciBaslangicUri));
 
@@ -365,7 +365,7 @@ begin
   DosyaAc(nil);
 end;
 
-procedure TForm1.DosyaKopyalaci_DahilidenHariciye(Dosya: string);
+procedure TForm1.FileCopier_FromInternalToExternal(Dosya: string);
 const
   bufferSize = 4096 * 2;
 var
@@ -377,7 +377,7 @@ var
 begin
   if not FileExists(Dosya) then
   begin
-    Teblig(Dosya + ' bulunamadý!');
+    Notify1(Dosya + ' could not be found!');
     exit;
   end;
   try
@@ -400,10 +400,10 @@ begin
     on E: Exception do
       Application.ShowException(E);
   end;
-  Teblig('Dahiliden Hariciye dosya kopyalandý : ' + DosyaAdi(UriCan));
+  Notify1('File copied from Internal to External: ' + FileName(UriCan));
 end;
 
-procedure TForm1.ButtonDosyaKopyalayinDahilidenHariciyeClick(Sender: TObject);
+procedure TForm1.ButtonCopyFileFromInternalToExternalClick(Sender: TObject);
 (* TFile.Copy(TPath.Combine(TPath.GetDocumentsPath, 'delphican.pdf'),
   TPath.Combine(TPath.GetSharedDownloadsPath, 'delphican.pdf')); *)
   procedure PdfDosyasiOlustur(seciciBaslangicUri: JNet_Uri);
@@ -427,7 +427,7 @@ begin
   PdfDosyasiOlustur(nil);
 end;
 
-procedure TForm1.DosyaKopyalaci_HaricidenDahiliye;
+procedure TForm1.FileCopier_FromExternalToInternal;
 const
   bufferSize = 4096 * 2;
 var
@@ -439,10 +439,10 @@ var
   // pfd : JParcelFileDescriptor;
 begin
   try
-    Dosya := TPath.Combine(TPath.GetPublicPath, DosyaAdi(UriCan));
+    Dosya := TPath.Combine(TPath.GetPublicPath, FileName(UriCan));
     if FileExists(Dosya) then
     begin
-      Teblig('"' + Dosya + '" zaten mevcut!');
+      Notify1('"' + Dosya + '" already exists!');
       exit;
     end;
     DosyaYaz := TJFileOutputStream.JavaClass.init(StringToJString(Dosya));
@@ -461,10 +461,10 @@ begin
     on E: Exception do
       Application.ShowException(E);
   end;
-  Teblig('Hariciden Dahiliye dosya kopyalandý : ' + DosyaAdi(UriCan));
+  Notify1('File copied from External to Internal :' + FileName(UriCan));
 end;
 
-procedure TForm1.ButtonDosyaKopyalayinHaricidenDahiliyeClick(Sender: TObject);
+procedure TForm1.ButtonCopyFileFromExternalToInternalClick(Sender: TObject);
 (* TFile.Copy(TPath.Combine(TPath.GetSharedDownloadsPath, 'delphican.pdf'),
   TPath.Combine(TPath.GetPublicPath, 'delphican.pdf')); *)
 var
@@ -479,7 +479,7 @@ begin
     Dosya_Kopyala_Hariciden_Dahiliye);
 end;
 
-procedure TForm1.ButtonDosyaPaylasinClick(Sender: TObject);
+procedure TForm1.ButtonShareFileClick(Sender: TObject);
 var
   Intent: JIntent;
   mime: JMimeTypeMap;
@@ -487,7 +487,7 @@ var
   ExtFile: string;
   Dosya: string;
 begin
-  Dosya := DosyaAdi(UriCan);
+  Dosya := FileName(UriCan);
   ExtFile := AnsiLowerCase(StringReplace(TPath.GetExtension(Dosya),
     '.', '', []));
   mime := TJMimeTypeMap.JavaClass.getSingleton();
@@ -498,10 +498,10 @@ begin
   Intent.putExtra(TJIntent.JavaClass.EXTRA_STREAM, JParcelable(UriCan));
   Intent.addFlags(TJIntent.JavaClass.FLAG_GRANT_READ_URI_PERMISSION);
   TAndroidHelper.Activity.startActivity(TJIntent.JavaClass.createChooser(Intent,
-    StrToJCharSequence('Paylaþ Bakalým: ')));
+    StrToJCharSequence('Lets share: ')));
 end;
 
-procedure TForm1.ButtonHerhangiBirDosyaUrisiAlClick(Sender: TObject);
+procedure TForm1.ButtonGetAnyFileUriClick(Sender: TObject);
 var
   Intent: JIntent;
 begin
@@ -512,7 +512,7 @@ begin
   TAndroidHelper.Activity.startActivityForResult(Intent, Herhangi_Dosya_Sec);
 end;
 
-procedure TForm1.ButtonKaliciIzinlerClick(Sender: TObject);
+procedure TForm1.ButtonPermanentPermissionsClick(Sender: TObject);
 var
   TakeFlags: integer;
   Intent: JIntent;
@@ -526,14 +526,14 @@ begin
     (UriCan, TakeFlags);
 end;
 
-function TForm1.DosyaSilici(Uri: JNet_Uri): boolean;
+function TForm1.FileDeleter(Uri: JNet_Uri): boolean;
 begin
   result := TJDocumentsContract.JavaClass.deleteDocument
     (TAndroidHelper.contentResolver, Uri);
 end;
 
-procedure TForm1.ButtonYeniBirDosyaOluþturunClick(Sender: TObject);
-// PDF belgesi oluþturma için talep kodu.
+procedure TForm1.ButtonCreateANewFileClick(Sender: TObject);
+// PDF belgesi oluï¿½turma iï¿½in talep kodu.
 // const Dosya_Olustur : integer = 11;  //CREATE_FILE = 1
 
   procedure PdfDosyasiOlustur(seciciBaslangicUri: JNet_Uri);
@@ -547,8 +547,8 @@ procedure TForm1.ButtonYeniBirDosyaOluþturunClick(Sender: TObject);
     Intent.putExtra(TJIntent.JavaClass.EXTRA_TITLE,
       StringToJString('fatura.pdf'));
 
-    // Ýsteðe baðlý olarak, uygulamanýz dosyayý oluþturduðunda
-    // sistem dosya seçici tarafýndan açýlacak dizin için bir URI belirleyin.
+    // ï¿½steï¿½e baï¿½lï¿½ olarak, uygulamanï¿½z dosyayï¿½ oluï¿½turduï¿½unda
+    // sistem dosya seï¿½ici tarafï¿½ndan aï¿½ï¿½lacak dizin iï¿½in bir URI belirleyin.
     Intent.putExtra(TJDocumentsContract.JavaClass.EXTRA_INITIAL_URI,
       JParcelable(seciciBaslangicUri));
     MainActivity.startActivityForResult(Intent, Dosya_Olustur);
@@ -568,7 +568,7 @@ const
 begin
   inherited;
   TMessageManager.DefaultManager.SubscribeToMessage(TMessageResultNotification,
-    IletiFaaliyetiYakala);
+    CaptureMessageActivity);
   try
     TabControl1.ActiveTab := tiUriAl;
     Memo1.Lines.Add('Android ' + JStringToString
@@ -587,11 +587,11 @@ end;
 destructor TForm1.Destroy;
 begin
   TMessageManager.DefaultManager.Unsubscribe(TMessageResultNotification,
-    IletiFaaliyetiYakala);
+    CaptureMessageActivity);
   inherited;
 end;
 
-procedure TForm1.IletiFaaliyetiYakala(const Sender: TObject; const M: TMessage);
+procedure TForm1.CaptureMessageActivity(const Sender: TObject; const M: TMessage);
 begin
   if M is TMessageResultNotification then
     OnActivityResult(TMessageResultNotification(M).RequestCode,
@@ -608,62 +608,62 @@ begin
   Memo1.Lines.Clear;
   if ResultCode = TJActivity.JavaClass.RESULT_OK then
   begin
-    // Sonuç verisi kullanýcýnýn seçtiði
-    // belge veya dizin için bir URI içerir.
+    // Sonuï¿½ verisi kullanï¿½cï¿½nï¿½n seï¿½tiï¿½i
+    // belge veya dizin iï¿½in bir URI iï¿½erir.
     Uri := nil;
     if Assigned(Data) then
     begin
       if (Data = nil) then
       begin
-        Memo1.Lines.Add('Uri alýnamadý!');
+        Memo1.Lines.Add('Uri could not be obtained!');
         exit;
       end;
       Uri := Data.getData;
       UriCan := Uri;
-      Ad := '"' + DosyaAdi(Uri) + '" ';
+      Ad := '"' + FileName(Uri) + '" ';
       // (' + TPath.GetFileName(JStringToString(uri.getPath) + ') ');
 
-      // URI’sini kullanarak belge üzerinde iþlemler gerçekleþtirin.
+      // URIï¿½sini kullanarak belge ï¿½zerinde iï¿½lemler gerï¿½ekleï¿½tirin.
       if RequestCode = Dosya_Olustur then
       begin
-        Teblig('Yeni pdf dosyasý oluþtur : ' + Ad);
+        Notify1('New pdf file created : ' + Ad);
       end;
       if RequestCode = Pdf_Dosyasi_Sec then
       begin
-        PdfGoster(Uri);
-        Teblig('Pdf dosyasý oku: ' + Ad);
+        ShowPdf(Uri);
+        Notify1('Read Pdf file: ' + Ad);
       end;
       if RequestCode = Dizin_Agaci_Ac then
       begin
-        Teblig(Ad + ' dizinindeki öðelere ulaþma izni verildi.');
+        Notify1('Access granted to files in directory: ' + Ad);
       end;
       if RequestCode = Dosya_Sil then
       begin
-        DosyaSilici(Uri);
-        Teblig(Ad + 'silindi');
+        FileDeleter(Uri);
+        Notify1(Ad + 'deleted');
         UriCan := nil;
       end;
       if RequestCode = Metin_Dosyasi_Sec then
       begin
-        Teblig('Metin dosyasý oku: ' + Ad + sLineBreak +
-          MetinDosyasiOkuyucu(Uri));
+        Notify1('Read text file: ' + Ad + sLineBreak +
+          TextFileReader(Uri));
       end;
       if RequestCode = Resim_Goster then
       begin
-        ResimGosterici(Uri, ImageControl1);
-        Teblig('Resim göster: ' + Ad);
+        ImageShowcase(Uri, ImageControl1);
+        Notify1('Show image: ' + Ad);
       end;
       if RequestCode = Herhangi_Dosya_Sec then
       begin
-        Teblig('Dosya seçildi: ' + Ad);
+        Notify1('File selected: ' + Ad);
       end;
       if RequestCode = Dosya_Kopyala_Dahiliden_Hariciye then
       begin
-        DosyaKopyalaci_DahilidenHariciye(DosyaKopyalanan);
+        FileCopier_FromInternalToExternal(DosyaKopyalanan);
       end;
       if RequestCode = Dosya_Kopyala_Hariciden_Dahiliye then
       begin
-        DosyaKopyalaci_HaricidenDahiliye;
+        FileCopier_FromExternalToInternal;
       end;
     end;
     Memo1.Lines.Add(' ');
@@ -671,7 +671,7 @@ begin
   end
   else if ResultCode = TJActivity.JavaClass.RESULT_CANCELED then
   begin
-    Teblig('Aktivite iptal edildi!');
+    Notify1('Activity cancelled!');
   end;
   if UriCan <> nil then
     MemoUri.Text := JStringToString(UriCan.toString)
@@ -684,19 +684,19 @@ begin
   Panel1.Parent := TabControl1.ActiveTab;
 end;
 
-procedure TForm1.Teblig(cTeblig: string);
+procedure TForm1.Notify1(text: string);
 begin
-  Memo1.Lines.Add(cTeblig + sLineBreak);
+  Memo1.Lines.Add(text + sLineBreak);
   Application.ProcessMessages;
   TThread.Synchronize(nil,
     procedure
     begin
       TJToast.JavaClass.makeText(TAndroidHelper.Context,
-        StrToJCharSequence(cTeblig), TJToast.JavaClass.LENGTH_LONG).show;
+        StrToJCharSequence(text), TJToast.JavaClass.LENGTH_LONG).show;
     end);
 end;
 
-function TForm1.DosyaAdi(Uri: JNet_Uri): string;
+function TForm1.FileName(Uri: JNet_Uri): string;
 var
   C: JCursor;
 begin
@@ -714,7 +714,7 @@ begin
   end;
 end;
 
-function TForm1.DosyaUri(Uri: JNet_Uri): JNet_Uri;
+function TForm1.FileUri(Uri: JNet_Uri): JNet_Uri;
 var
   C: JCursor;
   DosyaYolu : JString;
@@ -727,17 +727,17 @@ begin
       exit;
     C.moveToFirst;
     DosyaYolu := C.getString(0);
-   //LUri := TAndroidHelper.JFileToJURI(TJFile.JavaClass.init(StringToJString(DosyaAdi(UriCan)))); // StringToJString(AFileName)));
+   //LUri := TAndroidHelper.JFileToJURI(TJFile.JavaClass.init(StringToJString(FileName(UriCan)))); // StringToJString(AFileName)));
     result := TAndroidHelper.JFileToJURI(TJFile.JavaClass.init(DosyaYolu)); //JStringToString(C.getString(C.getColumnIndex(TJOpenableColumns.JavaClass.DISPLAY_NAME)));
   finally
     C.close;
   end;
 end;
 
-procedure TForm1.ButtonDosyalarCetveliClick(Sender: TObject);
+procedure TForm1.ButtonFilesRulerClick(Sender: TObject);
 var
   FileList: TStringDynArray;
-  DocDir, Dosya, s: string;
+  DocDir, FFile, s: string;
 begin
   with Memo1 do
   begin
@@ -751,17 +751,17 @@ begin
     FileList := TDirectory.GetFiles(DocDir);
     for s in FileList do
       Lines.Add(TPath.GetFileName(s));
-    Dosya := 'delphican.pdf';
+    FFile := 'delphican.pdf';
     Lines.Add(' ');
-    if (FileExists(TPath.Combine(TPath.GetDocumentsPath, Dosya))) then
-      Lines.Add(Dosya + ' dahili klasörde mevcut')
+    if (FileExists(TPath.Combine(TPath.GetDocumentsPath, FFile))) then
+      Lines.Add(FFile + ' exists in the internal folder')
     else
-      Lines.Add(Dosya + ' dahili klasörde yok');
-    Dosya := 'delphican.pdf';
-    if (FileExists(TPath.Combine(TPath.GetSharedDownloadsPath, Dosya))) then
-      Lines.Add(Dosya + ' harici klasörde mevcut')
+      Lines.Add(FFile + ' does not exist in the internal folder');
+    FFile := 'delphican.pdf';
+    if (FileExists(TPath.Combine(TPath.GetSharedDownloadsPath, FFile))) then
+      Lines.Add(FFile + ' exists in the external folder')
     else
-      Lines.Add(Dosya + ' harici klasörde yok');
+      Lines.Add(FFile + ' does not exist in the external folder');
     Lines.Add(' ');
     GoToTextEnd;
   end;
@@ -775,7 +775,7 @@ begin
     MemoUri.Text := '';
 end;
 
-function TForm1.MetinDosyasiOkuyucu(Uri: JNet_Uri): string;
+function TForm1.TextFileReader(Uri: JNet_Uri): string;
 (* readTextFromUri *)
 const
   bufferSize = 4096 * 2;
@@ -809,7 +809,7 @@ begin
   end;
 end;
 
-procedure TForm1.PdfGoster(Uri: JNet_Uri);
+procedure TForm1.ShowPdf(Uri: JNet_Uri);
 var
   Intent: JIntent;
 begin
@@ -821,7 +821,7 @@ begin
   TAndroidHelper.Activity.startActivity(Intent);
 end;
 
-procedure TForm1.ResimGosterici(Uri: JNet_Uri; Resim: TImageControl);
+procedure TForm1.ImageShowcase(Uri: JNet_Uri; Resim: TImageControl);
   procedure GetEXIF(const AFileName: JInputStream);
   var
     LEXIF: JExifInterface;
@@ -829,21 +829,21 @@ procedure TForm1.ResimGosterici(Uri: JNet_Uri; Resim: TImageControl);
   begin
     try
       LEXIF := TJExifInterface.JavaClass.init(AFileName);
-      Memo1.Lines.Add('Çekildiði Tarih: ' +
+      Memo1.Lines.Add('Date Taken: ' +
         JStringToString(LEXIF.getAttribute
         (TJExifInterface.JavaClass.TAG_DATETIME)));
-      Memo1.Lines.Add('Kamera Markasý: ' +
+      Memo1.Lines.Add('Camera Make: ' +
         JStringToString(LEXIF.getAttribute
         (TJExifInterface.JavaClass.TAG_MAKE)));
-      Memo1.Lines.Add('Kamera Modeli: ' +
+      Memo1.Lines.Add('Camera Model: ' +
         JStringToString(LEXIF.getAttribute
         (TJExifInterface.JavaClass.TAG_MODEL)));
       LLatLong := TJavaArray<Single>.Create(2);
       try
         if LEXIF.getLatLong(LLatLong) then
         begin
-          Memo1.Lines.Add('Enlem: ' + LLatLong.Items[0].toString);
-          Memo1.Lines.Add('Boylam: ' + LLatLong.Items[1].toString);
+          Memo1.Lines.Add('Latitude: ' + LLatLong.Items[0].toString);
+          Memo1.Lines.Add('Longitude: ' + LLatLong.Items[1].toString);
         end;
       finally
         LLatLong.Free;

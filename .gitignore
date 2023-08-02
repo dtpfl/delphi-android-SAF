@@ -1,0 +1,9 @@
+__history/
+__recovery/
+*.~*
+
+Android64/
+Android32/
+
+*.local
+*.identcache

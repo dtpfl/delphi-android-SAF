@@ -1,4 +1,4 @@
-﻿object Form1: TForm1
+object Form1: TForm1
   Left = 0
   Top = 0
   ActiveControl = tiUriAl
@@ -40,37 +40,37 @@
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'URI al'
+      Text = 'Get URI'
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
-      object ButtonBirDizininErisimineIzinVerin: TButton
+      object btnAccessToDir: TButton
         Align = Top
         Position.Y = 66.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        Text = 'Bir dizinin i'#231'eri'#287'ine eri'#351'im izni verin'
-        OnClick = ButtonBirDizininErisimineIzinVerinClick
+        Text = 'Grant access to a directorys i access'
+        OnClick = ButtonAllowAccessToOneDirectoryClick
       end
-      object ButtonBirDosyaAcin: TButton
+      object btnOpenFile: TButton
         Align = Top
         Position.Y = 33.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Text = 'Bir dosya a'#231#305'n'
-        OnClick = ButtonBirDosyaAcinClick
+        Text = 'Open a file'
+        OnClick = ButtonOpenAFileClick
       end
-      object ButtonYeniBirDosyaOluşturun: TButton
+      object ButtonCreateANewFile: TButton
         Align = Top
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
-        Text = 'Yeni bir dosya olu'#351'turun'
-        OnClick = ButtonYeniBirDosyaOluşturunClick
+        Text = 'Create a new file'
+        OnClick = ButtonCreateANewFileClick
       end
       object Panel1: TPanel
         Align = Client
@@ -109,15 +109,15 @@
           Viewport.Height = 29.000000000000000000
         end
       end
-      object ButtonHerhangiBirDosyaUrisiAl: TButton
+      object btnGetFileUri: TButton
         Align = Top
         Position.Y = 99.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Text = 'Herhangi bir dosya Uri'#39'si al'
-        OnClick = ButtonHerhangiBirDosyaUrisiAlClick
+        Text = 'Get any file Uri'
+        OnClick = ButtonGetAnyFileUriClick
       end
     end
     object tiSAF1: TTabItem
@@ -133,44 +133,44 @@
       Text = 'SAF 1'
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
-      object ButtonBelgeAcinGirisAkisi: TButton
+      object btnOpenDocInputStream: TButton
         Align = Top
         Position.Y = 99.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
-        Text = 'Belge a'#231#305'n - giri'#351' ak'#305#351#305
-        OnClick = ButtonBelgeAcinGirisAkisiClick
+        Text = 'Open the document - input stream'
+        OnClick = ButtonOpenDocumentInputStreamClick
       end
-      object ButtonKaliciIzinler: TButton
+      object BtnPermanentPermission: TButton
         Align = Top
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        Text = 'Kal'#305'c'#305' izinler'
-        OnClick = ButtonKaliciIzinlerClick
+        Text = 'Permanent permissions'
+        OnClick = ButtonPermanentPermissionsClick
       end
-      object ButtonBelgeMetaVerileriniInceleyin: TButton
+      object BtnReviewDocMeta: TButton
         Align = Top
         Position.Y = 33.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        Text = 'Belge meta verilerini inceleyin'
-        OnClick = ButtonBelgeMetaVerileriniInceleyinClick
+        Text = 'Review the document metadata'
+        OnClick = ButtonInspectDocumentMetaDataClick
       end
-      object ButtonBelgeAcinBitEslem: TButton
+      object BtnOpenDocBitmap: TButton
         Align = Top
         Position.Y = 66.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Text = 'Belge a'#231#305'n - bit e'#351'lem'
-        OnClick = ButtonBelgeAcinBitEslemClick
+        Text = 'Open the document - bit mapping'
+        OnClick = ButtonOpenDocumentBitProcessClick
       end
     end
     object tiSAF2: TTabItem
@@ -186,44 +186,44 @@
       Text = 'SAF 2'
       ExplicitSize.cx = 99.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
-      object ButtonSanalBirDosyaAcin: TButton
+      object BtnOpenVirtFile: TButton
         Align = Top
         Position.Y = 66.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        Text = 'Sanal bir dosya a'#231#305'n'
-        OnClick = ButtonSanalBirDosyaAcinClick
+        Text = 'Open a virtual file'
+        OnClick = ButtonOpenAVirtualFileClick
       end
-      object ButtonSanalDosyadanGirisAkisi: TButton
+      object BtnInputStreamFromVirtFile: TButton
         Align = Top
         Position.Y = 99.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Text = 'Sanal dosyadan giri'#351' ak'#305#351#305
-        OnClick = ButtonSanalDosyadanGirisAkisiClick
+        Text = 'Input stream from a virtual file'
+        OnClick = ButtonVirtualFileInputStreamClick
       end
-      object ButtonBelgeDuzenleyin: TButton
+      object BtnEditDoc: TButton
         Align = Top
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Text = 'Belge d'#252'zenleyin'
-        OnClick = ButtonBelgeDuzenleyinClick
+        Text = 'Edit the document'
+        OnClick = ButtonEditDocumentClick
       end
-      object ButtonBelgeSilin: TButton
+      object BtnDeleteDoc: TButton
         Align = Top
         Position.Y = 33.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
-        Text = 'Belge Silin'
-        OnClick = ButtonBelgeSilinClick
+        Text = 'Delete the document'
+        OnClick = ButtonDocumentDeleteClick
       end
     end
     object tiIlave1: TTabItem
@@ -239,34 +239,34 @@
       Text = 'ilave 1'
       ExplicitSize.cx = 166.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
-      object ButtonMetinDosyasiOku: TButton
+      object BtnReadTextFile: TButton
         Align = Top
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Text = 'Metin dosyas'#305' oku'
-        OnClick = ButtonMetinDosyasiOkuClick
+        Text = 'Read the text file'
+        OnClick = ButtonReadTextFileClick
       end
-      object ButtonPdfGoster: TButton
+      object BtnShowPDF: TButton
         Align = Top
         Position.Y = 66.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        Text = 'Pdf g'#246'ster'
-        OnClick = ButtonPdfGosterClick
+        Text = 'Show PDF'
+        OnClick = ButtonShowPdfClick
       end
-      object xButtonPdfSec: TButton
+      object btnSelectPDF: TButton
         Align = Top
         Position.Y = 33.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 8
-        Text = 'Pdf se'#231
-        OnClick = xButtonPdfSecClick
+        Text = 'Select pdf'
+        OnClick = xButtonSelectPdfClick
       end
       object ImageControl1: TImageControl
         Align = Right
@@ -277,15 +277,15 @@
         Size.PlatformDefault = False
         TabOrder = 9
       end
-      object ButtonResimGoster: TButton
+      object btnShowImage: TButton
         Align = Top
         Position.Y = 99.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 10
-        Text = 'Resim g'#246'ster'
-        OnClick = ButtonResimGosterClick
+        Text = 'Show image'
+        OnClick = ButtonShowImageClick
       end
     end
     object tiIlave2: TTabItem
@@ -301,44 +301,44 @@
       Text = 'ilave 2'
       ExplicitSize.cx = 126.000000000000000000
       ExplicitSize.cy = 49.000000000000000000
-      object ButtonDosyaKopyalayinDahilidenHariciye: TButton
+      object btnCopyInternalExternal: TButton
         Align = Top
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        Text = 'Dosya kopyalay'#305'n Dahili -> Harici'
-        OnClick = ButtonDosyaKopyalayinDahilidenHariciyeClick
+        Text = 'Copy file Internal -> External'
+        OnClick = ButtonCopyFileFromInternalToExternalClick
       end
-      object ButtonDosyaKopyalayinHaricidenDahiliye: TButton
+      object BtnCopyExternalInternal: TButton
         Align = Top
         Position.Y = 33.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
-        Text = 'Dosya kopyalay'#305'n Harici -> Dahili'
-        OnClick = ButtonDosyaKopyalayinHaricidenDahiliyeClick
+        Text = 'Copy file External -> Internal'
+        OnClick = ButtonCopyFileFromExternalToInternalClick
       end
-      object ButtonDosyaPaylasin: TButton
+      object BtnShareFile: TButton
         Align = Top
         Position.Y = 66.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Text = 'Dosya payla'#351#305'n'
-        OnClick = ButtonDosyaPaylasinClick
+        Text = 'Share the file'
+        OnClick = ButtonShareFileClick
       end
-      object ButtonDosyalarCetveli: TButton
+      object btnFileRuler: TButton
         Align = Top
         Position.Y = 99.000000000000000000
         Size.Width = 498.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 5
-        Text = 'Dosyalar cetveli'
-        OnClick = ButtonDosyalarCetveliClick
+        Text = 'File ruler'
+        OnClick = ButtonFilesRulerClick
       end
     end
   end
